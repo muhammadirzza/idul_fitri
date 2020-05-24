@@ -62,7 +62,6 @@ body {
   border-bottom-right-radius: 10px;
   position: relative;
   transform-style: preserve-3d;
-  cursor: pointer;
 }
 
 .mail:before{
@@ -125,7 +124,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 80px;
+  font-size: 20px;
   color: #798992;
   font-weight: 900;
 }
@@ -135,13 +134,57 @@ body {
   transition: all 1s ease;
 }
 
-.mail:hover .letter{
-  top: -120px;
+.mail:hover .letter {
+  top: -70px;
   transition: all 1s 1s ease;
-  /* z-index: 10; */
+  z-index: 10;
 }
-.letter:hover h1{
+/* .mail:hover .Link {
+  top: -150px;
+  transition: all 1s 1s ease;
+  z-index: 10;
+} */
+/* .mail:hover .letter h1{
   z-index: 10 !important;
+} */
+
+.box {
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 11;
+}
+
+.box span {
+  position: absolute;
+  box-sizing: border-box;
+  border: 2px solid #798992;
+  border-radius: 50%;
+  animation: animates 3s linear infinite;
+  animation-delay: calc(-0.6s * (var(--i)));
+}
+
+.box .span:hover {
+  cursor: pointer;
+}
+
+@keyframes animates {
+  0%{
+    width: 0;
+    height: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    width: 50px;
+    height: 50px;
+    opacity: 1;
+  }
 }
 
 .center {
@@ -172,7 +215,7 @@ ul.cr1 {
   left: 20%;
 }
 ul.cr2 {
-  top: 20%;
+  top: 25%;
   left: 70%;
 }
 ul.cr3 {
@@ -180,8 +223,8 @@ ul.cr3 {
   left: 25%;
 }
 ul.cr4 {
-  top: 60%;
-  left: 75%;
+  top: 65%;
+  left: 73%;
 }
 
 ul li{
@@ -263,5 +306,46 @@ h3 {
   100%
   {
     transform: scaleX(1);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .center {
+    width: 300px;
+    height: 300px;
+  }
+
+  h2{
+    font-size: 2.2em;
+    margin: 5px;
+    padding: 2px;
+  }
+
+  h3{
+    font-size: 2em;
+  }
+
+  ul li{
+    position: absolute;
+    width: 60px;
+    height: 2px;
+    background: #fff;
+    list-style: none;
+  }
+  ul.cr1 {
+    top: 30%;
+    left: 10%;
+  }
+  ul.cr2 {
+    top: 25%;
+    left: 70%;
+  }
+  ul.cr3 {
+    top: 70%;
+    left: 5%;
+  }
+  ul.cr4 {
+    top: 60%;
+    left: 80%;
   }
 }
