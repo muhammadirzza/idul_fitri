@@ -101,7 +101,7 @@ body {
   border-right: 150px solid transparent;
   border-top: 100px solid #ff8789;
   border-bottom: 100px solid transparent;
-  z-index: 6;
+  z-index: 5;
   transform-origin: top;
   transform: rotateX(0deg);
   transition: all 1s 1s ease;
@@ -132,6 +132,7 @@ body {
 .mail:hover .cover:before{
   transform: rotateX(180deg);
   transition: all 1s ease;
+  z-index: 0;
 }
 
 .mail:hover .letter {
@@ -142,10 +143,10 @@ body {
 /* .mail:hover .Link {
   top: -150px;
   transition: all 1s 1s ease;
-  z-index: 10;
-} */
-/* .mail:hover .letter h1{
   z-index: 10 !important;
+}
+.mail:hover .letter Link{
+  z-index: 15 !important;
 } */
 
 .box {
@@ -169,7 +170,9 @@ body {
 }
 
 .box .span:hover {
+  z-index: 11;
   cursor: pointer;
+
 }
 
 @keyframes animates {
@@ -207,7 +210,7 @@ ul {
   margin: 0;
   padding: 0;
   width: 100px;
-  animation: rotate 7s linear infinite;
+  animation: rotate 5s linear infinite;
 }
 
 ul.cr1 {
@@ -283,6 +286,21 @@ h3 {
   font-family: 'Parisienne', cursive;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+  /* text-align: center; */
+  position: absolute;
+  bottom: 0%;
+  left: 68%;
+  text-shadow: 0 10px 20px rgba(185, 184, 184, 0.5);
+  color: #fff;
+  font-size: 1em;
+  /* width: 100%; */
+  font-family: sans-serif;
+  font-style: italic;
+}
+
 @keyframes rotate {
   0%
   {
@@ -309,25 +327,36 @@ h3 {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media screen and (min-width : 0px) and (max-width: 760px) {
   .center {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
   }
 
   h2{
-    font-size: 2.2em;
+    font-size: 2em;
     margin: 5px;
     padding: 2px;
   }
 
   h3{
     font-size: 2em;
+    /* margin: 1px; */
+    padding: 2px;
+  }
+
+  p {
+    /* margin: 0%; */
+    /* padding: 0%; */
+    font-size: 0.5em;
+    bottom: 0%;
+    left: 0%;
+    /* width: auto; */
   }
 
   ul li{
     position: absolute;
-    width: 60px;
+    width: 40px;
     height: 2px;
     background: #fff;
     list-style: none;
@@ -338,14 +367,15 @@ h3 {
   }
   ul.cr2 {
     top: 25%;
-    left: 70%;
+    left: 60%;
   }
   ul.cr3 {
     top: 70%;
     left: 5%;
   }
   ul.cr4 {
-    top: 60%;
-    left: 80%;
+    top: 70%;
+    left: 65%;
   }
+  
 }
